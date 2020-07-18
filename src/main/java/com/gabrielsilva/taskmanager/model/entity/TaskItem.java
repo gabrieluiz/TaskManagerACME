@@ -8,7 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.Builder;
+import lombok.Data;
+
 @Entity
+@Builder
+@Data
 public class TaskItem {
 	
 	@Id

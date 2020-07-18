@@ -6,7 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Builder;
+import lombok.Data;
+
 @Entity
+@Builder
+@Data
 public class Task {
 	
 	@Id
@@ -15,5 +20,7 @@ public class Task {
 	
 	@Column(name = "ds_task")
 	private String taskName;
+	
+	
 
 }

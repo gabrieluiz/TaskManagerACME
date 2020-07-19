@@ -8,26 +8,34 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.gabrielsilva.taskmanager.model.entity.enums.TaskItemStatus;
+
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Builder
 @Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class TaskItem {
 	
+	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "ds_it_task")
-	private String itTaskName;
+	@Column(nullable = false)
+	private String itTaskDescription;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_task")
-	private Task taskName;
+	private Task TaskDescription;
 	
-	@Column(name = "yn_completed")
-	private String ynCompleted;
+	@Column(columnDefinition = "INTEGER DEFAULT '0'")
+	private TaskItemStatus status;
 
 }

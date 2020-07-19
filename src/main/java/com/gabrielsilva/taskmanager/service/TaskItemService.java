@@ -1,13 +1,20 @@
 package com.gabrielsilva.taskmanager.service;
 
+import java.util.Optional;
+
+import com.gabrielsilva.taskmanager.api.dto.TaskItemDTO;
 import com.gabrielsilva.taskmanager.model.entity.TaskItem;
-import com.gabrielsilva.taskmanager.model.entity.enums.TaskItemStatus;
+
 
 public interface TaskItemService {
 	
-	TaskItem saveTask(TaskItem taskItem);
-	TaskItem updateTask(TaskItem taskItem);
-	void completeTask(TaskItem taskItem, TaskItemStatus status);
-	void deleteTask(TaskItem taskItem);
-
+	TaskItem saveTaskItem(TaskItem taskItem);
+	
+	TaskItem completeTaskItem(TaskItem taskItem);
+	
+	void deleteTaskItem(TaskItem taskItem);
+	
+	TaskItem convertDTO(TaskItemDTO dto);
+	
+	Optional<TaskItem> search(Long id);
 }

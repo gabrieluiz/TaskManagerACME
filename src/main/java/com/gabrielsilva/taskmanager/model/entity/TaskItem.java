@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.gabrielsilva.taskmanager.model.entity.enums.TaskItemStatus;
@@ -33,9 +32,9 @@ public class TaskItem {
 	private String itTaskDescription;
 	
 	@ManyToOne
-	private Task TaskDescription;
+	private Task Task;
 	
 	@Column(columnDefinition = "INTEGER DEFAULT '0'")
-	private TaskItemStatus status;
+	private boolean status;
 
 }

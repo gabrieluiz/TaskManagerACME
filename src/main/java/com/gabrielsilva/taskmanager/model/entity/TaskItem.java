@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import com.gabrielsilva.taskmanager.model.entity.enums.TaskItemStatus;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
